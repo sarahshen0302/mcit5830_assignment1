@@ -27,20 +27,20 @@ def connect_with_middleware(contract_json):
 
 	# TODO complete this method
 	# The first section will be the same as "connect_to_eth()" but with a BNB url
-  	url = "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
+	url = "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
 	w3 = Web3(HTTPProvider(url))
 
-  w3.middleware_onion.inject(
-    ExtraDataToPOAMiddleware,
-    layer=0
-  )
+	w3.middleware_onion.inject(
+		ExtraDataToPOAMiddleware,
+    	layer=0
+	)
 
 	# The second section requires you to inject middleware into your w3 object and
 	# create a contract object. Read more on the docs pages at https://web3py.readthedocs.io/en/stable/middleware.html
 	# and https://web3py.readthedocs.io/en/stable/web3.contract.html
 	contract = w3.eth.contract(
-    address=address,
-    abi=abi
+    	address=address,
+    	abi=abi
     )
 
 	return w3, contract
