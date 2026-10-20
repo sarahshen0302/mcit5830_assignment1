@@ -27,7 +27,7 @@ def connect_with_middleware(contract_json):
 
 	# TODO complete this method
 	# The first section will be the same as "connect_to_eth()" but with a BNB url
-  url = "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
+  	url = "https://data-seed-prebsc-1-s1.bnbchain.org:8545"
 	w3 = Web3(HTTPProvider(url))
 
   w3.middleware_onion.inject(
